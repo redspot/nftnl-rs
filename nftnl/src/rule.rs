@@ -5,7 +5,7 @@ use std::os::raw::c_char;
 
 /// A nftables firewall rule.
 pub struct Rule<'a> {
-    rule: *mut sys::nftnl_rule,
+    pub rule: *mut sys::nftnl_rule,
     chain: &'a Chain<'a>,
 }
 
