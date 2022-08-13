@@ -34,11 +34,6 @@ impl Expression for Nat {
                 sys::NFTNL_EXPR_NAT_REG_ADDR_MIN as u16,
                 self.ip_register.to_raw(),
             );
-            sys::nftnl_expr_set_u32(
-                expr,
-                sys::NFTNL_EXPR_NAT_REG_ADDR_MAX as u16,
-                0,
-            );
             if let Some(port_register) = self.port_register {
                 sys::nftnl_expr_set_u32(
                     expr,
